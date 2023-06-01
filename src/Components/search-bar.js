@@ -1,4 +1,14 @@
+// import axios from 'axios';
+
 const SearchBar = () => {
+  // const url = 'https://api.openbrewerydb.org/v1/breweries?by_city=raleigh'
+
+  // const handleClick = () => {
+  //   const request = axios.get(url)
+  //   .then(response => console.log(response))
+
+  // }
+
   return (
     <div>
       <div className='text-center'>
