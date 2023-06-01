@@ -1,4 +1,14 @@
+// import axios from 'axios';
+
 const SearchBar = () => {
+  // const url = 'https://api.openbrewerydb.org/v1/breweries?by_city=raleigh'
+
+  // const handleClick = () => {
+  //   const request = axios.get(url)
+  //   .then(response => console.log(response))
+
+  // }
+
   return (
     <div>
       <div className='text-center'>
@@ -19,12 +29,12 @@ const SearchBar = () => {
               <button className='btn btn-primary' type='submit'>Search</button>
             </div>
             <div className='form-check form-check-inline'>
-              <input class='form-check-input' type='radio' name='flexRadioDefault' id='flexRadioDefault1'></input>
-              <label className='form-check-label' for='flexRadioDefault1'>Brewery</label>
+              <input className='form-check-input' type='radio' name='search-brewery' id='flexRadioDefault1'></input>
+              <label className='form-check-label' htmlFor='flexRadioDefault1'>Brewery</label>
             </div>
             <div className='form-check form-check-inline'>
-              <input className='form-check-input' type='radio' name='flexRadioDefault' id='flexRadioDefault2'></input>
-              <label className='form-check-label' for='flexRadioDefault2'>City</label>
+              <input className='form-check-input' type='radio' name='search-city' id='flexRadioDefault2'></input>
+              <label className='form-check-label' htmlFor='flexRadioDefault2'>City</label>
             </div>
           </div>
         <hr />

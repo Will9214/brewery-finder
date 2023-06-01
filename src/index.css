@@ -12,9 +12,15 @@ code {
     monospace;
 }
 
+.show-brewery {
+  border: 1px solid black;
+  padding: 10px 30px 30px;
+  margin-bottom: 20px;
+
 .jumbotron {
   padding: 30px 20px;
   margin-bottom: 2rem;
   background-color: gray;
   border-radius: 0.3rem;
+
 }
