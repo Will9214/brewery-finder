@@ -1,9 +1,15 @@
 import SearchBar from './Components/search-bar';
 import './App.css';
 
+import ShowBrewery from './Components/show-brewery';
+
 function App() {
   return (
-    <SearchBar />
+    <div>
+      <SearchBar />
+      <ShowBrewery />
+    </div>
+    
   )
 }
 
