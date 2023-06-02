@@ -7,6 +7,7 @@ const BreweryResultsList = () => {
   const breweries = useSelector((state) => state.breweries);
 
   const renderBreweryList = () => {
+    
     if (breweries) {
       return breweries.map((brewery) => {
         
