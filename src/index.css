@@ -34,9 +34,6 @@ code {
 .fav-list {
   border: 1px solid black;
   border-radius: 0.3rem;
-}
-
-.api-query-result {
   padding: 10px;
   margin-bottom: 10px;
 }

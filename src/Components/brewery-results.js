@@ -1,3 +1,5 @@
+import FavoritesList from "./favorites-list";
+
 const BreweryResultsList = () => {
   return (
     <div className="row">
@@ -8,7 +10,9 @@ const BreweryResultsList = () => {
         <div className="api-query-result">Result Four</div>
         <div className="api-query-result">Result Five</div>
       </div>
-      <div className="fav-list col-6 col-lg-4">Favorite Brewery List Sidebar, will import from favorites-list.js</div>
+      <div className="fav-list col-6 col-lg-4">
+        <FavoritesList />
+      </div>
     </div>
   )
 };
