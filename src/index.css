@@ -27,4 +27,19 @@ code {
 
 .form-range {
   appearance: auto;
+
+.row {
+  padding: 10px 30px;
+  margin: 10px;
+}
+
+.api-query-result,
+.fav-list {
+  border: 1px solid black;
+  border-radius: 0.3rem;
+}
+
+.api-query-result {
+  padding: 10px;
+  margin-bottom: 10px;
 }
