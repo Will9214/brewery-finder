@@ -24,3 +24,7 @@ code {
   background-color: gray;
   border-radius: 0.3rem;
 }
+
+.form-range {
+  appearance: auto;
+}
