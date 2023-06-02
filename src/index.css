@@ -25,6 +25,10 @@ code {
   border-radius: 0.3rem;
 }
 
+.form-range {
+  appearance: auto;
+}
+
 .row {
   padding: 10px 30px;
   margin: 10px;
