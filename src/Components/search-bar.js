@@ -10,14 +10,8 @@ const SearchBar = () => {
 
   return (
     <div>
-      <div className='text-center'>
-        <div className='container'>
-          <h1>Find A Brewery</h1>
-        </div>
-      </div>
       <div className='container'>
-
-
+        
         <form className='container row'>
           <div className=''>
             <label className='form-label'>Search for Specific Brewery or a City and Find a Brewery</label>
