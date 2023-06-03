@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import FavoritesList from "./favorites-list";
 import { useSelector } from 'react-redux';
 import _ from 'lodash';
@@ -5,14 +6,19 @@ import _ from 'lodash';
 const BreweryResultsList = () => {
 
   const breweries = useSelector((state) => state.breweries);
+  const navigate = useNavigate();
+
+  const handleRowClick = (e) => {
+    const breweryId = e.currentTarget.id;
+    navigate(`/breweries/${breweryId}`);
+  }
 
   const renderBreweryList = () => {
-    
     if (breweries) {
       return breweries.map((brewery) => {
         
         return (
-          <div key={brewery.id} className="api-query-result">
+          <div key={brewery.id} id={brewery.id} className="api-query-result brewery" onClick={handleRowClick}>
             <div>{brewery.name}</div>
             <div>{brewery.street}</div>
             <div>{brewery.city}, {brewery.state}</div>
