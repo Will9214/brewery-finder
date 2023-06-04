@@ -19,7 +19,7 @@ function BreweryRoutes() {
 
 function App() {
   return (
-    <div>
+    <div className='hero-image'>
       <Header />
       <BreweryRoutes />
     </div>
