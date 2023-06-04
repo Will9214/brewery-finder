@@ -3,7 +3,6 @@ import axios from 'axios';
 export const FETCH_BREWERY_BY_NAME = 'FETCH_BREWERY_BY_NAME';
 export const FETCH_BREWERY_BY_CITY = 'FETCH_BREWERY_BY_CITY';
 
-
 export function fetchBreweryByName(query) {
   const breweryURL = 'https://api.openbrewerydb.org/v1/breweries?by_name=';
   const request = axios.get (`${breweryURL}${query.name}`)
@@ -19,7 +18,7 @@ export function fetchBreweryByCity(query) {
   const request = axios.get(`${breweryURL}${query.city}`)
   
   return {
-    type:FETCH_BREWERY_BY_CITY,
+    type: FETCH_BREWERY_BY_CITY,
     payload: request
   }
-}
+};
