@@ -1,23 +1,22 @@
 
 import { useState } from "react";
-
+  
+import { useNavigate } from "react-router-dom";
+  
 const FavoritesList = () => {
+  const navigate = useNavigate();
   const [favorites, setFavorites] = useState([]);
 
   function handleClick() {
     setFavorites()
-
-import { useNavigate } from "react-router-dom";
-
-const FavoritesList = () => {
-  const navigate = useNavigate();
-
+  }
+  
   const handleRowClick = (e) => {
     navigate('/favorites/1');
     // const favoritesId = e.currentTarget.id;
     // navigate(`/favorites/${favoritesId}`);
 
-  }
+}
 
   return (
     <div>
