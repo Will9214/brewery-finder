@@ -43,6 +43,6 @@ code {
   margin-bottom: 10px;
 }
 
-.brewery:hover {
+.list-item:hover {
   background-color: lightgrey;
 }

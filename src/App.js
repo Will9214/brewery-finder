@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import SearchBar from './Components/search-bar';
 import './App.css';
 import Header from './Components/header';
 import BreweryResultsList from './Components/brewery-results';
@@ -22,7 +21,6 @@ function App() {
   return (
     <div>
       <Header />
-      <SearchBar />
       <BreweryRoutes />
     </div>
   )
