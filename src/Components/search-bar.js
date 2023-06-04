@@ -33,7 +33,7 @@ const SearchBar = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='container search-bar'>
       <form className='container row' defaultValue='brewery' onSubmit={handleSubmit(handleFormSubmit)}>
         <div>
           <label className='form-label'>Search for Specific Brewery or a City and Find a Brewery</label>
