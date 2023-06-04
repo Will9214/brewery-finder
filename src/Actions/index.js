@@ -22,3 +22,7 @@ export function fetchBreweryByCity(query) {
     payload: request
   }
 };
+
+export function addToFavoritesList() {
+  
+}

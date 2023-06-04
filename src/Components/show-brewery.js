@@ -9,6 +9,9 @@ const ShowBrewery = () => {
   const pathId = path.params.id;
   const brewery = breweries.find(obj => obj.id === pathId);
   
+  const handleFavoriteClick = () => {
+    alert("hello");
+  }
 
   return (
     <div className='container col-md-6 offset-3 show-brewery'>
@@ -16,7 +19,10 @@ const ShowBrewery = () => {
         <h4 className='text-center'>{brewery.name}</h4>
         <div className='row'>
           <div className='col-md-8'>Brewery Type: {brewery.brewery_type}</div>
-          <button className='col-md-4 btn btn-outline-success'>Add to Favorites</button>
+          <button className='col-md-4 btn btn-outline-success' 
+              onClick={handleFavoriteClick}>
+                Add to Favorites
+              </button>
         </div>
         <div className='row'>
             <div className='col-md-8'>
