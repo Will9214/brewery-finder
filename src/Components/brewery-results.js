@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
+
 import FavoritesList from "./favorites-list";
 import SearchBar from "./search-bar";
+
 
 const BreweryResultsList = () => {
 
@@ -22,6 +24,10 @@ const BreweryResultsList = () => {
             <div>{brewery.name}</div>
             <div>{brewery.street}</div>
             <div>{brewery.city}, {brewery.state}</div>
+            <button className='col-md-4 btn btn-outline-success' 
+              >
+                Add to Favorites
+              </button>
           </div>
         )
       })
