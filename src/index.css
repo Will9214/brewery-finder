@@ -16,13 +16,25 @@ code {
   border: 1px solid black;
   padding: 10px 30px 30px;
   margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 0.3rem;
 }
 
 .jumbotron {
   padding: 30px 20px;
-  margin-bottom: 2rem;
   background-color: gray;
-  border-radius: 0.3rem;
+}
+
+.header-image {
+  background-image: url("https://us.123rf.com/450wm/superstijl/superstijl1506/superstijl150600026/41657489-wooden-panels.jpg?ver=6");
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.hero-image {
+  background-color: #f6c101;
+  /* background-image: url("https://img.freepik.com/free-vector/beer-glasses-seamless-pattern-with-different-kinds-glasses-pulled-light-beers-malts-hand-drawing-white_1284-49325.jpg?w=2000");
+  background-repeat: repeat; */
 }
 
 .form-range {
@@ -40,4 +52,8 @@ code {
   border-radius: 0.3rem;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.list-item:hover {
+  background-color: lightgrey;
 }

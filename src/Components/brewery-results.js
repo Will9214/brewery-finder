@@ -1,17 +1,26 @@
-import FavoritesList from "./favorites-list";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
+
+import FavoritesList from "./favorites-list";
+import SearchBar from "./search-bar";
+
 
 const BreweryResultsList = () => {
 
   const breweries = useSelector((state) => state.breweries);
+  const navigate = useNavigate();
+
+  const handleRowClick = (e) => {
+    const breweryId = e.currentTarget.id;
+    navigate(`/breweries/${breweryId}`);
+  }
 
   const renderBreweryList = () => {
-    
     if (breweries) {
       return breweries.map((brewery) => {
         
         return (
-          <div key={brewery.id} className="api-query-result">
+          <div key={brewery.id} id={brewery.id} className="api-query-result list-item" onClick={handleRowClick}>
             <div>{brewery.name}</div>
             <div>{brewery.street}</div>
             <div>{brewery.city}, {brewery.state}</div>
@@ -26,23 +35,18 @@ const BreweryResultsList = () => {
   }
 
   return (
-    <div className="row">
-      <div className="results-body col-sm-6 col-lg-8">
-        {renderBreweryList()}
-        {/* <div className="api-query-result">
-          <div>Brewery Name</div>
-          <div>Brewery Address</div>
-          <div>Address Line 2</div>
+    <div>
+      <SearchBar />
+      <div className="row">
+        <div className="results-body col-sm-6 col-lg-8">
+          {renderBreweryList()}
         </div>
-        <div className="api-query-result">Result Two</div>
-        <div className="api-query-result">Result Three</div>
-        <div className="api-query-result">Result Four</div>
-        <div className="api-query-result">Result Five</div> */}
-      </div>
-      <div className="fav-list col-6 col-lg-4">
-        <FavoritesList />
+        <div className="fav-list col-6 col-lg-4">
+          <FavoritesList />
+        </div>
       </div>
     </div>
+    
   )
 };
 
