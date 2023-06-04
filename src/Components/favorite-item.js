@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const FavoriteItem = () => {
   return (
     <div className='container col-md-8 offset-2'>
@@ -18,7 +20,10 @@ const FavoriteItem = () => {
             <br></br>
             <div className='text-center'> MAP </div>
           </div>
-        </div>        
+        </div>  
+        <div className="row">
+          <Link to="/" className="btn btn-primary">Back</Link>
+        </div>       
       </div>
 
       <form>
