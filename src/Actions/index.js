@@ -3,6 +3,7 @@ import axios from 'axios';
 export const FETCH_BREWERY_BY_NAME = 'FETCH_BREWERY_BY_NAME';
 export const FETCH_BREWERY_BY_CITY = 'FETCH_BREWERY_BY_CITY';
 export const ADD_TO_FAVORITES_LIST = 'ADD_TO_FAVORITES_LIST';
+export const REMOVE_FROM_FAVORITE_LIST = 'REMOVE_FROM_FAVORITE_LIST';
 
 export function fetchBreweryByName(query) {
   const breweryURL = 'https://api.openbrewerydb.org/v1/breweries?by_name=';
@@ -28,5 +29,12 @@ export function addToFavoritesList(brewery) {
   return {
     type: ADD_TO_FAVORITES_LIST,
     payload: brewery
+  }
+};
+
+export function removeFromFavoritesList(pathId) {
+  return {
+    type: REMOVE_FROM_FAVORITE_LIST,
+    payload: pathId
   }
 }
