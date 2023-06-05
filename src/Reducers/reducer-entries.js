@@ -7,7 +7,6 @@ const DEFAULT_STATE = {
 };
 
 const breweryReducer = function (state = DEFAULT_STATE, action) {
-  
   switch (action.type) {
     case FETCH_BREWERY_BY_NAME:
       return {

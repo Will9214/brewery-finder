@@ -9,13 +9,11 @@ const FavoriteItem = () => {
   const location = useLocation();
   const path = matchPath("/favorites/:id", location.pathname);
   const pathId = path.params.id;
+  
   const favorite = favList.find((obj) => {
     for (let prop in obj) {
-      if (prop === pathId) {
-        return obj[prop]
-      }
+        return prop === pathId
     }
-    debugger;
   });
   const dispatch = useDispatch();
 
@@ -26,9 +24,9 @@ const FavoriteItem = () => {
   return (
     <div className='container col-md-8 offset-2'>
       <div className='show-brewery'>
-        <h4 className='text-center'>{favorite.info.name}</h4>
+        {/* <h4 className='text-center'>{favorite[pathId].info.name}</h4> */}
         <div className='row'>
-          <div className='col-md-8'>Brewery Type: {favorite.info.brewery_type}</div>
+          {/* <div className='col-md-8'>Brewery Type: {favorite[pathId].info.brewery_type}</div> */}
           <button className='col-md-4 btn btn-outline-success' 
             onClick={handleRemoveFromFavoriteClick}>
               Remove from Favorites
@@ -36,10 +34,10 @@ const FavoriteItem = () => {
         </div>
         <div className='row'>
           <div className='col-md-8'>
-            <div className=''>{favorite.info.street}</div>
-            <div>{favorite.info.city}, {favorite.info.state} {favorite.info.postal_code}</div>
-            <div>{favorite.info.phone}</div>
-            <div>{favorite.info.website_url}</div>
+            {/* <div className=''>{favorite[pathId].info.street}</div>
+            <div>{favorite[pathId].info.city}, {favorite[pathId].info.state} {favorite[pathId].info.postal_code}</div>
+            <div>{favorite[pathId].info.phone}</div>
+            <div>{favorite[pathId].info.website_url}</div> */}
           </div>
             <div className='col-md-4'>
             <br></br>
