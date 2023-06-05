@@ -14,16 +14,23 @@ const FavoritesList = () => {
 
   
   const renderFavoritesList = () => {
-    for (const prop in favorites) {
-      if (favorites.hasOwnProperty(prop)) {
-        return (
-          <div className="fav-list col-6 col-lg-12 list-item" onClick={handleRowClick}>
-            {prop.info.name}
-          </div>
-        )
-      } 
+    if (favorites) {
+      let favList = Object.entries(favorites).map((e) => ({[e[0]]: e[1]}));
+      return favList.map((favorite) => {
+        for (let prop in favorite) {
+          return (
+            <div className="fav-list col-6 col-lg-12 list-item" 
+              key={favorite[prop].info.id} 
+              id={favorite[prop].info.id} 
+              onClick={handleRowClick}>
+              {favorite[prop].info.name}
+            </div>
+          )
+        }
+      })
     }
   }
+
   return (
     <div>
       <h3>Favorite Brewery List</h3>
