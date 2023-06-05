@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const FETCH_BREWERY_BY_NAME = 'FETCH_BREWERY_BY_NAME';
 export const FETCH_BREWERY_BY_CITY = 'FETCH_BREWERY_BY_CITY';
+export const ADD_TO_FAVORITES_LIST = 'ADD_TO_FAVORITES_LIST';
 
 export function fetchBreweryByName(query) {
   const breweryURL = 'https://api.openbrewerydb.org/v1/breweries?by_name=';
@@ -23,6 +24,9 @@ export function fetchBreweryByCity(query) {
   }
 };
 
-export function addToFavoritesList() {
-  
+export function addToFavoritesList(brewery) {
+  return {
+    type: ADD_TO_FAVORITES_LIST,
+    payload: brewery
+  }
 }

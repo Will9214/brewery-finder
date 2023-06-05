@@ -1,5 +1,7 @@
 import { Link, useLocation, matchPath } from "react-router-dom"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavoritesList } from "../Actions";
+
 
 const ShowBrewery = () => {
 
@@ -8,9 +10,10 @@ const ShowBrewery = () => {
   const path = matchPath("/breweries/:id", location.pathname);
   const pathId = path.params.id;
   const brewery = breweries.find(obj => obj.id === pathId);
+  const dispatch = useDispatch();
   
   const handleFavoriteClick = () => {
-    alert("hello");
+    dispatch(addToFavoritesList(brewery));
   }
 
   return (
