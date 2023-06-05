@@ -1,5 +1,4 @@
 import { FETCH_BREWERY_BY_CITY, FETCH_BREWERY_BY_NAME, ADD_TO_FAVORITES_LIST } from "../Actions";
-import _ from "lodash";
 
 const DEFAULT_STATE = {
   breweries: [],
@@ -7,15 +6,17 @@ const DEFAULT_STATE = {
 };
 
 const breweryReducer = function (state = DEFAULT_STATE, action) {
-  debugger;
+  
   switch (action.type) {
     case FETCH_BREWERY_BY_NAME:
       return {
-        breweries: action.payload.data
+        breweries: action.payload.data,
+        favorites: {...state.favorites}
       }
     case FETCH_BREWERY_BY_CITY:
       return {
-        breweries: action.payload.data
+        breweries: action.payload.data,
+        favorites: {...state.favorites}
       }
     case ADD_TO_FAVORITES_LIST:
       return {
