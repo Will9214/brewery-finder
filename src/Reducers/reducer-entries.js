@@ -1,4 +1,5 @@
-import { FETCH_BREWERY_BY_CITY, FETCH_BREWERY_BY_NAME, ADD_TO_FAVORITES_LIST } from "../Actions";
+import { FETCH_BREWERY_BY_CITY, FETCH_BREWERY_BY_NAME, ADD_TO_FAVORITES_LIST, REMOVE_FROM_FAVORITE_LIST } from "../Actions";
+import _ from "lodash";
 
 const DEFAULT_STATE = {
   breweries: [],
@@ -27,6 +28,11 @@ const breweryReducer = function (state = DEFAULT_STATE, action) {
               isFavorite: true
             }
           }
+      }
+    case REMOVE_FROM_FAVORITE_LIST:
+      return {
+        ...state,
+        favorites: _.omit(state.favorites, action.payload)
       }
     default:
       return state;

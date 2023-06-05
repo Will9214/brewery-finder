@@ -5,13 +5,11 @@ const FavoritesList = () => {
   const navigate = useNavigate();
   
   const handleRowClick = (e) => {
-    navigate('/favorites/1');
-    // const favoritesId = e.currentTarget.id;
-    // navigate(`/favorites/${favoritesId}`);
+    const favoritesId = e.currentTarget.id;
+    navigate(`/favorites/${favoritesId}`);
   }
 
   const favorites = useSelector(state => state.favorites);
-
   
   const renderFavoritesList = () => {
     if (favorites) {
