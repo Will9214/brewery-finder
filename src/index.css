@@ -31,10 +31,25 @@ code {
   background-size: contain;
 }
 
+.header-font {
+  font-family: "Bangers";
+  font-size: 110px;
+  color: rgb(60, 60, 60);
+}
+
 .hero-image {
-  background-color: #f6c101;
-  /* background-image: url("https://img.freepik.com/free-vector/beer-glasses-seamless-pattern-with-different-kinds-glasses-pulled-light-beers-malts-hand-drawing-white_1284-49325.jpg?w=2000");
-  background-repeat: repeat; */
+  background-image: url("https://img.freepik.com/free-vector/beer-glasses-seamless-pattern-with-different-kinds-glasses-pulled-light-beers-malts-hand-drawing-white_1284-49325.jpg?w=2000");
+  background-repeat: repeat;
+}
+
+.form-label {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.background-color {
+  /* background-color: rgba(173, 216, 230, 0.75); */
+  background-color: rgba(246, 193, 1, 0.6);
 }
 
 .form-range {
