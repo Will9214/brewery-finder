@@ -4,7 +4,6 @@ import _ from "lodash";
 const DEFAULT_STATE = {
   breweries: [],
   favorites: [],
-  favoritesOrder: []
 };
 
 const breweryReducer = function (state = DEFAULT_STATE, action) {
@@ -26,8 +25,7 @@ const breweryReducer = function (state = DEFAULT_STATE, action) {
               info: action.payload,
               isFavorite: true
             }
-          },
-        favoritesOrder: [...state.favoritesOrder].concat([action.payload.id])
+          }
       }
     default:
       return state;
