@@ -3,30 +3,21 @@ import { Link, matchPath, useLocation } from "react-router-dom";
 import { removeFromFavoritesList } from "../Actions";
 
 const FavoriteItem = () => {
-
-  const favorites = useSelector((state) => state.favorites);
-  const favList = Object.entries(favorites).map((e) => ({[e[0]]: e[1]}));
-  const location = useLocation();
-  const path = matchPath("/favorites/:id", location.pathname);
-  const pathId = path.params.id;
   
-  const favorite = favList.find((obj) => {
-    for (let prop in obj) {
-        return prop === pathId
-    }
-  });
+  const { state } = useLocation();
+  
   const dispatch = useDispatch();
 
   const handleRemoveFromFavoriteClick = () => {
-    dispatch(removeFromFavoritesList(pathId));
+    dispatch(removeFromFavoritesList(state.favorite.id));
   }
 
   return (
     <div className='container col-md-8 offset-2'>
       <div className='show-brewery'>
-        {/* <h4 className='text-center'>{favorite[pathId].info.name}</h4> */}
+        <h4 className='text-center'>{state.favorite.name}</h4>
         <div className='row'>
-          {/* <div className='col-md-8'>Brewery Type: {favorite[pathId].info.brewery_type}</div> */}
+          <div className='col-md-8'>Brewery Type: {state.favorite.brewery_type}</div>
           <button className='col-md-4 btn btn-outline-success' 
             onClick={handleRemoveFromFavoriteClick}>
               Remove from Favorites
@@ -34,10 +25,10 @@ const FavoriteItem = () => {
         </div>
         <div className='row'>
           <div className='col-md-8'>
-            {/* <div className=''>{favorite[pathId].info.street}</div>
-            <div>{favorite[pathId].info.city}, {favorite[pathId].info.state} {favorite[pathId].info.postal_code}</div>
-            <div>{favorite[pathId].info.phone}</div>
-            <div>{favorite[pathId].info.website_url}</div> */}
+            <div className=''>{state.favorite.street}</div>
+            <div>{state.favorite.city}, {state.favorite.state} {state.favorite.postal_code}</div>
+            <div>{state.favorite.phone}</div>
+            <div>{state.favorite.website_url}</div>
           </div>
             <div className='col-md-4'>
             <br></br>

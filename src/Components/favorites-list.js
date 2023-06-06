@@ -4,9 +4,19 @@ import { useNavigate } from "react-router-dom";
 const FavoritesList = () => {
   const navigate = useNavigate();
   
-  const handleRowClick = (e) => {
-    const favoritesId = e.currentTarget.id;
-    navigate(`/favorites/${favoritesId}`);
+  const handleRowClick = (event, favorite) => {
+    const favoritesId = event.currentTarget.id;
+    // navigate(`/favorites/${favoritesId}`);
+    navigate(
+      `/favorites/${favoritesId}`,
+      {
+        state: {
+          favorite: favorite[favoritesId].info
+        }
+      }
+    );
+    console.log(favoritesId);
+    console.log(favorite[favoritesId].info);
   }
 
   const favorites = useSelector(state => state.favorites);
@@ -20,7 +30,7 @@ const FavoritesList = () => {
             <div className="fav-list col-6 col-lg-12 list-item" 
               key={favorite[prop].info.id} 
               id={favorite[prop].info.id} 
-              onClick={handleRowClick}>
+              onClick={(event) => handleRowClick(event, favorite)}>
               {favorite[prop].info.name}
             </div>
           )
