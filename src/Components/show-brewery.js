@@ -13,6 +13,7 @@ const ShowBrewery = () => {
   const dispatch = useDispatch();
   
   const handleFavoriteClick = () => {
+    console.log(brewery)
     dispatch(addToFavoritesList(brewery));
   }
 
@@ -22,8 +23,7 @@ const ShowBrewery = () => {
         <h4 className='text-center'>{brewery.name}</h4>
         <div className='row'>
           <div className='col-md-8'>Brewery Type: {brewery.brewery_type}</div>
-          <button className='col-md-4 btn btn-outline-success' 
-              onClick={handleFavoriteClick}>
+          <button className='col-md-4 btn btn-outline-success' onClick={handleFavoriteClick}>
                 Add to Favorites
               </button>
         </div>

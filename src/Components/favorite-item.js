@@ -5,41 +5,35 @@ import { removeFromFavoritesList } from "../Actions";
 const FavoriteItem = () => {
 
   const favorites = useSelector((state) => state.favorites);
-  const favList = Object.entries(favorites).map((e) => ({[e[0]]: e[1]}));
   const location = useLocation();
   const path = matchPath("/favorites/:id", location.pathname);
   const pathId = path.params.id;
-  
-  const favorite = favList.find((obj) => {
-    for (let prop in obj) {
-        return prop === pathId
-    }
-  });
+  const favorite = favorites.find(obj => obj.id === pathId);
   const dispatch = useDispatch();
-
+  
   const handleRemoveFromFavoriteClick = () => {
-    dispatch(removeFromFavoritesList(pathId));
+    console.log(favorite)
+    // dispatch(removeFromFavoritesList());
   }
 
   return (
     <div className='container col-md-8 offset-2'>
       <div className='show-brewery'>
-        {/* <h4 className='text-center'>{favorite[pathId].info.name}</h4> */}
+        <h4 className='text-center'>{favorite.name}</h4>
         <div className='row'>
-          {/* <div className='col-md-8'>Brewery Type: {favorite[pathId].info.brewery_type}</div> */}
-          <button className='col-md-4 btn btn-outline-success' 
-            onClick={handleRemoveFromFavoriteClick}>
+          <div className='col-md-8'>Brewery Type: {favorite.brewery_type}</div>
+          <button className='col-md-4 btn btn-outline-success' onClick={handleRemoveFromFavoriteClick}>
               Remove from Favorites
             </button>
         </div>
         <div className='row'>
           <div className='col-md-8'>
-            {/* <div className=''>{favorite[pathId].info.street}</div>
-            <div>{favorite[pathId].info.city}, {favorite[pathId].info.state} {favorite[pathId].info.postal_code}</div>
-            <div>{favorite[pathId].info.phone}</div>
-            <div>{favorite[pathId].info.website_url}</div> */}
+            <div className=''>{favorite.street}</div>
+            <div>{favorite.city}, {favorite.state} {favorite.postal_code}</div>
+            <div>{favorite.phone}</div>
+            <div>{favorite.website_url}</div>
           </div>
-            <div className='col-md-4'>
+          <div className='col-md-4'>
             <br></br>
             <div className='text-center'> MAP </div>
           </div>
