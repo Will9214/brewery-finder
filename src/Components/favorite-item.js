@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { Link, matchPath, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
 import { removeFromFavoritesList } from "../Actions";
 
 const FavoriteItem = () => {

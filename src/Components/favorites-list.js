@@ -6,7 +6,6 @@ const FavoritesList = () => {
   
   const handleRowClick = (event, favorite) => {
     const favoritesId = event.currentTarget.id;
-    // navigate(`/favorites/${favoritesId}`);
     navigate(
       `/favorites/${favoritesId}`,
       {
@@ -15,8 +14,6 @@ const FavoritesList = () => {
         }
       }
     );
-    console.log(favoritesId);
-    console.log(favorite[favoritesId].info);
   }
 
   const favorites = useSelector(state => state.favorites);

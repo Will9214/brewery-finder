@@ -2,7 +2,6 @@ import { Link, useLocation, matchPath } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import { addToFavoritesList } from "../Actions";
 
-
 const ShowBrewery = () => {
 
   const breweries = useSelector((state) => state.breweries);
