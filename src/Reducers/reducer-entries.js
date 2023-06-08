@@ -1,5 +1,4 @@
 import { FETCH_BREWERY_BY_CITY, FETCH_BREWERY_BY_NAME, ADD_TO_FAVORITES_LIST, REMOVE_FROM_FAVORITE_LIST } from "../Actions";
-import _ from "lodash";
 
 const DEFAULT_STATE = {
   breweries: [],
@@ -13,13 +12,11 @@ const breweryReducer = function (state = DEFAULT_STATE, action) {
       return {
         ...state,
         breweries: action.payload.data,
-        // favorites: [...state.favorites]
       }
     case FETCH_BREWERY_BY_CITY:
       return {
         ...state,
         breweries: action.payload.data,
-        // favorites: [...state.favorites]
       }
     case ADD_TO_FAVORITES_LIST:
       return {
@@ -33,7 +30,6 @@ const breweryReducer = function (state = DEFAULT_STATE, action) {
     case REMOVE_FROM_FAVORITE_LIST:
       return {
         ...state,
-        // favorites: _.omit(state.favorites, action.payload)
         favorites: state.favorites.filter(obj => obj.id !== action.payload)
       }
     default:
