@@ -12,18 +12,6 @@ const FavoritesList = () => {
   
   // const handleRowClick = (event, favorite) => {
   //   const favoritesId = event.currentTarget.id;
-  //   navigate(
-  //     `/favorites/${favoritesId}`,
-  //     {
-  //       state: {
-  //         favorite: favorite[favoritesId].info
-  //       }
-  //     }
-  //   );
-  // }
-
-  // const handleRowClick = (event, favorite) => {
-  //   const favoritesId = event.currentTarget.id;
   //   // navigate(`/favorites/${favoritesId}`);
   //   debugger;
   //   navigate(

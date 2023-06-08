@@ -14,8 +14,10 @@ const FavoriteItem = () => {
   const favorite = favorites.find(obj => obj.id === pathId);
 
   const dispatch = useDispatch();
-  
+  // const { state } = useLocation();
+
   const handleRemoveFromFavoriteClick = () => {
+    // dispatch(removeFromFavoritesList(state.favorite.id));
     dispatch(removeFromFavoritesList(pathId));
     navigate("/");
   }
