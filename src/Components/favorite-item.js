@@ -1,12 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, matchPath, useLocation } from "react-router-dom";
+import { Link, matchPath, useLocation, useNavigate } from "react-router-dom";
 import { removeFromFavoritesList } from "../Actions";
 
 const FavoriteItem = () => {
 
-  
-  const { state } = useLocation();
-  
+  const navigate = useNavigate();
 
   const favorites = useSelector((state) => state.favorites);
   const location = useLocation();
@@ -17,50 +15,24 @@ const FavoriteItem = () => {
   const dispatch = useDispatch();
   
   const handleRemoveFromFavoriteClick = () => {
-
-    dispatch(removeFromFavoritesList(state.favorite.id));
-
-    console.log(favorite)
-    // dispatch(removeFromFavoritesList());
-
+    dispatch(removeFromFavoritesList(pathId));
+    navigate("/");
   }
 
   return (
     <div className='container col-md-8 offset-2'>
-      <div className='show-brewery'>
-
-        <h4 className='text-center'>{state.favorite.name}</h4>
-        <div className='row'>
-          <div className='col-md-8'>Brewery Type: {state.favorite.brewery_type}</div>
-          <button className='col-md-4 btn btn-outline-success' 
-            onClick={handleRemoveFromFavoriteClick}>
-
-              
+      <div className='show-brewery'>   
         <h4 className='text-center'>{favorite.name}</h4>
         <div className='row'>
           <div className='col-md-8'>Brewery Type: {favorite.brewery_type}</div>
-          <button className='col-md-4 btn btn-outline-success' onClick={handleRemoveFromFavoriteClick}>
-
-            
-              Remove from Favorites
-            </button>
+          <button className='col-md-4 btn btn-outline-success' onClick={handleRemoveFromFavoriteClick}>Remove from Favorites</button>
         </div>
         <div className='row'>
           <div className='col-md-8'>
-
-            
-            <div className=''>{state.favorite.street}</div>
-            <div>{state.favorite.city}, {state.favorite.state} {state.favorite.postal_code}</div>
-            <div>{state.favorite.phone}</div>
-            <div>{state.favorite.website_url}</div>
-
-
             <div className=''>{favorite.street}</div>
             <div>{favorite.city}, {favorite.state} {favorite.postal_code}</div>
             <div>{favorite.phone}</div>
             <div>{favorite.website_url}</div>
-
-
           </div>
           <div className='col-md-4'>
             <br></br>

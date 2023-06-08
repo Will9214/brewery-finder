@@ -33,7 +33,8 @@ const breweryReducer = function (state = DEFAULT_STATE, action) {
     case REMOVE_FROM_FAVORITE_LIST:
       return {
         ...state,
-        favorites: _.omit(state.favorites, action.payload)
+        // favorites: _.omit(state.favorites, action.payload)
+        favorites: state.favorites.filter(obj => obj.id !== action.payload)
       }
     default:
       return state;

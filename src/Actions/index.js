@@ -32,10 +32,11 @@ export function addToFavoritesList(brewery) {
   }
 };
 
-export function removeFromFavoritesList() {
+export function removeFromFavoritesList(pathId) {
   
   return {
     type: REMOVE_FROM_FAVORITE_LIST,
+    payload: pathId
     
   }
 }
