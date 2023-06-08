@@ -4,10 +4,23 @@ import { useNavigate } from "react-router-dom";
 const FavoritesList = () => {
   const navigate = useNavigate();
   
+
   const handleRowClick = (e) => {
     const favoritesId = e.currentTarget.id;
     navigate(`/favorites/${favoritesId}`);
   }
+  
+  // const handleRowClick = (event, favorite) => {
+  //   const favoritesId = event.currentTarget.id;
+  //   navigate(
+  //     `/favorites/${favoritesId}`,
+  //     {
+  //       state: {
+  //         favorite: favorite[favoritesId].info
+  //       }
+  //     }
+  //   );
+  // }
 
   // const handleRowClick = (event, favorite) => {
   //   const favoritesId = event.currentTarget.id;
