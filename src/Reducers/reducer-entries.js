@@ -7,27 +7,29 @@ const DEFAULT_STATE = {
 };
 
 const breweryReducer = function (state = DEFAULT_STATE, action) {
+
   switch (action.type) {
     case FETCH_BREWERY_BY_NAME:
       return {
+        ...state,
         breweries: action.payload.data,
-        favorites: {...state.favorites}
+        // favorites: [...state.favorites]
       }
     case FETCH_BREWERY_BY_CITY:
       return {
+        ...state,
         breweries: action.payload.data,
-        favorites: {...state.favorites}
+        // favorites: [...state.favorites]
       }
     case ADD_TO_FAVORITES_LIST:
       return {
         ...state,
-        favorites: {...state.favorites, 
-            [action.payload.id]: {
-              info: action.payload,
-              isFavorite: true
-            }
-          }
+        favorites: [
+          ...state.favorites, 
+          action.payload
+        ]
       }
+      
     case REMOVE_FROM_FAVORITE_LIST:
       return {
         ...state,

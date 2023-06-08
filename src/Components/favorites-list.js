@@ -22,7 +22,9 @@ const FavoritesList = () => {
   const favorites = useSelector(state => state.favorites);
   
   const renderFavoritesList = () => {
+
     if (favorites) {
+
       let favList = Object.entries(favorites).map((e) => ({[e[0]]: e[1]}));
       return favList.map((favorite) => {
         for (let prop in favorite) {
@@ -35,6 +37,17 @@ const FavoritesList = () => {
             </div>
           )
         }
+
+      return favorites.map((favorite) => {
+        return (
+          <div className="fav-list col-6 col-lg-12 list-item" 
+            key={favorite.id} 
+            id={favorite.id} 
+            onClick={handleRowClick}>
+            {favorite.name}
+          </div>
+        )
+
       })
     }
   }
